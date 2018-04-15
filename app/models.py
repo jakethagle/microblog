@@ -44,7 +44,7 @@ class User(UserMixin, db.Model):
 			self.followed.append(user)
 
 	def unfollow(self, user):
-		if self.is_following(users):
+		if self.is_following(user):
 			self.followed.remove(user)
 
 	def is_following(self, user):

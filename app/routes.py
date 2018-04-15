@@ -11,14 +11,15 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
 @login_required
 def index():
 	form = PostForm()
-	posts = current_user.followed_posts().all()
+	page = request.args.get('page', 1, type=int)
+	posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
 	if form.validate_on_submit():
 		post = Post(body=form.post.data, author=current_user)
 		db.session.add(post)
 		db.session.commit()
 		flash('Your post is now live!')
 		return redirect(url_for('index'))
-	return render_template('index.html', title='Home', form=form, posts=posts)
+	return render_template('index.html', title='Home', form=form, posts=posts.items)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -123,5 +124,6 @@ def unfollow(username):
 @app.route('/explore')
 @login_required
 def explore():
-	posts  = Post.query.order_by(Post.timestamp.desc()).all()
-	return render_template('index.html', title='Explore', posts=posts)
+	page = request.args.get('page', 1, type=int)
+	posts  = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+	return render_template('index.html', title='Explore', posts=posts.items)

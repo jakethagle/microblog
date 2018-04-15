@@ -73,3 +73,25 @@ Traceback (most recent call last):
 AttributeError: 'RegistrationForm' object has no attribute 'original_username'
 2018-04-13 20:40:13,940 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
 2018-04-13 20:43:19,931 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:57:02,197 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:59:53,585 ERROR: Exception on /unfollow/test1 [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/frosty/microblog/app/routes.py", line 118, in unfollow
+    current_user.unfollow(user)
+  File "/home/frosty/microblog/app/models.py", line 47, in unfollow
+    if self.is_following(users):
+NameError: global name 'users' is not defined
+2018-04-13 21:00:51,429 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:18:18,208 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
