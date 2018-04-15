@@ -1,4 +1,80 @@
-2018-04-13 20:12:44,215 ERROR: Exception on /index [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
+2018-04-13 20:28:36,647 ERROR: Exception on /register [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/frosty/microblog/app/routes.py", line 52, in register
+    form = RegistrationForm()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() takes at least 2 arguments (1 given)
+2018-04-13 20:33:29,973 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:33:46,853 ERROR: Exception on /register [POST] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/frosty/microblog/app/routes.py", line 53, in register
+    if form.validate_on_submit():
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/frosty/microblog/app/forms.py", line 30, in validate_username
+    if username.data != self.original_username:
+AttributeError: 'RegistrationForm' object has no attribute 'original_username'
+2018-04-13 20:37:00,970 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:37:05,265 ERROR: Exception on /register [POST] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/frosty/microblog/app/routes.py", line 53, in register
+    if form.validate_on_submit():
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/frosty/microblog/app/forms.py", line 26, in validate_username
+    if username.data != self.original_username:
+AttributeError: 'RegistrationForm' object has no attribute 'original_username'
+2018-04-13 20:40:13,940 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:43:19,931 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:57:02,197 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-13 20:59:53,585 ERROR: Exception on /unfollow/test1 [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,26 +88,18 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/frosty/microblog/app/routes.py", line 21, in index
-    return render_template('index.html', title='Home', form=form, posts=posts)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
-    context, ctx.app)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
-    rv = template.render(context)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/frosty/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/frosty/microblog/app/templates/base.html", line 30, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/frosty/microblog/app/templates/index.html", line 8, in block "content"
-    {{ forms.post.label }}<br>
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-UndefinedError: 'forms' is undefined
-2018-04-13 20:12:46,127 ERROR: Exception on /index [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
+  File "/home/frosty/microblog/app/routes.py", line 118, in unfollow
+    current_user.unfollow(user)
+  File "/home/frosty/microblog/app/models.py", line 47, in unfollow
+    if self.is_following(users):
+NameError: global name 'users' is not defined
+2018-04-13 21:00:51,429 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:18:18,208 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:29:46,194 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:38:08,104 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:38:40,387 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:59:22,840 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+2018-04-14 20:59:27,412 ERROR: Exception on /user/test2 [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -45,81 +113,6 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/frosty/microblog/app/routes.py", line 21, in index
-    return render_template('index.html', title='Home', form=form, posts=posts)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
-    context, ctx.app)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
-    rv = template.render(context)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/frosty/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/frosty/microblog/app/templates/base.html", line 30, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/frosty/microblog/app/templates/index.html", line 8, in block "content"
-    {{ forms.post.label }}<br>
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-UndefinedError: 'forms' is undefined
-2018-04-13 20:14:58,995 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:17:03,789 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:17:39,254 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:18:48,090 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:19:17,405 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:21:18,595 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:22:25,656 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
-2018-04-13 20:24:06,296 ERROR: Exception on /register [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/frosty/microblog/app/routes.py", line 52, in register
-    form = RegistrationForm()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() takes at least 2 arguments (1 given)
-2018-04-13 20:25:31,430 ERROR: Exception on /register [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/frosty/microblog/app/routes.py", line 52, in register
-    form = RegistrationForm()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() takes at least 2 arguments (1 given)
-2018-04-13 20:27:27,710 ERROR: Exception on /register [GET] [in /home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/frosty/microblog/app/routes.py", line 52, in register
-    form = RegistrationForm()
-  File "/home/frosty/microblog/venv/local/lib/python2.7/site-packages/wtforms/form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() takes at least 2 arguments (1 given)
-2018-04-13 20:28:32,149 INFO: Microblog startup [in /home/frosty/microblog/app/__init__.py:40]
+  File "/home/frosty/microblog/app/routes.py", line 72, in user
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+NameError: global name 'page' is not defined
